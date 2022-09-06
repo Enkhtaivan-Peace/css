@@ -6,7 +6,8 @@
     "two"
     "three"
     "four"
-    "five"; // grid-template-columns ашиглах бол үүнийг ашиглахгүй
+    "five"
+    "six"; // grid-template-columns ашиглах бол үүнийг ашиглахгүй
   margin: var(--space-md);
   width: min(95%, 75rem);
   padding-block: 2rem;
@@ -27,26 +28,29 @@
 .item:nth-child(5) {
   grid-area: five;
 }
-// @media (min-width: 30em) {
-//   .grid {
-//     grid-template-areas:
-//       "one one"
-//       "two five"
-//       "three five"
-//       "four four";
-//   }
-// }
-@media (min-width: 50em) {
+.item:nth-child(6) {
+  grid-area: six;
+}
+@media (min-width: 768px) {
   .grid {
-    // grid-template-columns: repeat(4, 1fr); // template-areas - ийг хэрэглэхгүй бол үүнийг ашиглана
-    gap: 1.5rem; // template-areas ашигласны улмаас үүнийг нэмэх хэрэгтэй боллоо.
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "one one one two"
+      "four five five five"
+      "three three six six";
+  }
+}
+@media (min-width: 1200px) {
+  .grid {
+    gap: 1.5rem;
     grid-template-areas:
       "one one two five"
-      "three four four five";
+      "three four four five"
+      "six six six six";
   }
-  .grid-col-span-2 {
-    grid-column: span 2;
-  }
+  //   .grid-col-span-2 {
+  //     grid-column: span 2;
+  //   }
 
   // templete-area ашигласны улмаас үүнийг хэрэглэх шаардлагагүй боллоо
   // хэрвээ  grid-template-columns ашиглавал үүнийг ашиглана
@@ -58,9 +62,9 @@
   //   }
 }
 
-.grid-row-span-2 {
-  grid-row: span 2;
-}
+// .grid-row-span-2 {
+//   grid-row: span 2;
+// }
 .big-space {
   min-height: 400px;
 }
