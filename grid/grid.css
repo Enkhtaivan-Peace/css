@@ -1,0 +1,85 @@
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"; // grid-template-columns ашиглах бол үүнийг ашиглахгүй
+  margin: var(--space-md);
+  width: min(95%, 75rem);
+  padding-block: 2rem;
+  margin-inline: auto;
+}
+.item:nth-child(1) {
+  grid-area: one;
+}
+.item:nth-child(2) {
+  grid-area: two;
+}
+.item:nth-child(3) {
+  grid-area: three;
+}
+.item:nth-child(4) {
+  grid-area: four;
+}
+.item:nth-child(5) {
+  grid-area: five;
+}
+// @media (min-width: 30em) {
+//   .grid {
+//     grid-template-areas:
+//       "one one"
+//       "two five"
+//       "three five"
+//       "four four";
+//   }
+// }
+@media (min-width: 50em) {
+  .grid {
+    // grid-template-columns: repeat(4, 1fr); // template-areas - ийг хэрэглэхгүй бол үүнийг ашиглана
+    gap: 1.5rem; // template-areas ашигласны улмаас үүнийг нэмэх хэрэгтэй боллоо.
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+  }
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  // templete-area ашигласны улмаас үүнийг хэрэглэх шаардлагагүй боллоо
+  // хэрвээ  grid-template-columns ашиглавал үүнийг ашиглана
+  //   .item:last-child {
+  //     grid-column-start: 4;
+  //     grid-row-start: 1;
+  //     grid-row-end: 3;
+  //     //   grid-row: 1 / 3; //shorthand
+  //   }
+}
+
+.grid-row-span-2 {
+  grid-row: span 2;
+}
+.big-space {
+  min-height: 400px;
+}
+
+.bg1 {
+  background: var(--color-blue-1);
+}
+.bg2 {
+  background: var(--color-blue);
+}
+.bg3 {
+  background: var(--color-yellow-2);
+}
+.bg4 {
+  background: var(--color-purple);
+}
+.bg5 {
+  background: var(--color-purple-1);
+}
+.bg6 {
+  background: var(--color-purple-2);
+}

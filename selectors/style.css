@@ -1,0 +1,105 @@
+:root {
+  --color-white: #f1f1f1;
+  --color-blue: hsla(227, 73%, 49%, 1);
+  --color-red: hsla(8, 67%, 52%, 0.95);
+  --color-dark: hsla(0, 3%, 20%, 0.89);
+  --color-green: hsla(78, 82%, 65%, 0.92);
+  --color-yellow: hsla(52, 82%, 65%, 0.89);
+  --color-default: hsla(28, 55%, 58%, 0.84);
+
+  --font-size-xs: 0.5; // 8px
+  --font-size-sm: 0.625rem; //10px
+  --font-size-md: 0.75rem; //12px
+  --font-size-lg: 1rem; //16px
+  --font-size-xl: 1.125rem; //18px
+  --font-size-xxl: 1.25rem; //20px
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*nav, main, footer элэмэнт*/
+nav,
+main,
+footer {
+  font: var(--font-size-md);
+}
+ul {
+  list-style: none;
+}
+nav {
+  background: var(--color-default);
+}
+
+/*бүх nav элэмэнтэд байгаа бүх ul элемэнт */
+nav > ul {
+  background: var(--color-dark);
+}
+nav > ul > li > a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* бүх unvisited link */
+a:link {
+  //   color: var(--color-green);
+}
+
+/*parent нь  div байх бүх ul элемэнт */
+div > ul {
+  background: var(--color-yellow);
+}
+/* div дотор байгаа бүх ul элемэнт */
+div ul {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid var(--color-blue);
+}
+/* intro класст хамаарах бүх li элемэнт */
+li.intro {
+  background: var(--color-green);
+}
+/* div элемэнтийн дараа байрласан эхний p элемэнт */
+div + p {
+  color: var(--color-red);
+}
+/*өмнөх элемэнт нь span байх бүх p элемэнт */
+span ~ p {
+  color: var(--color-blue);
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--color-dark);
+}
+.tags p {
+  margin: 10px;
+}
+/* p элэмэнтийн эхний үсэг */
+.tags p::first-letter {
+  color: var(--color-red);
+}
+
+.tags p:first-of-type {
+  background: var(--color-green);
+}
+.tags p:last-of-type {
+  background: var(--color-blue);
+}
+
+/* бүх target attribute - тай элемэнт */
+[target="_blank"] {
+  color: var(--color-red);
+  text-decoration: underline;
+}
+
+.papers {
+  padding: 10px;
+  background: var(--color-default);
+}
+.papers a:target {
+  color: var(--color-white);
+}

@@ -1,0 +1,97 @@
+:root {
+  --height: 400px;
+  --bg: hsl(213, 87%, 79%);
+  --shadow: 0 0 1rem rgb(0 0 0 / 0.2);
+  --border-radius: 0.5rem;
+  --font-size: 3rem;
+}
+.outer-box,
+.d-table,
+.position,
+.position-v2,
+.pm-container {
+  margin: 20px 10px;
+}
+.outer-box {
+  width: 600px;
+  height: var(--height);
+  background: var(--bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+.inner-text {
+  font-size: 3rem;
+  text-align: center;
+  line-height: var(--height);
+  margin: 0;
+}
+
+.d-table {
+  display: table;
+  width: 600px;
+  height: var(--height);
+  background: var(--bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.d-table-text {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: var(--font-size);
+  text-align: center;
+  margin: 0;
+}
+
+.position {
+  position: relative;
+  width: 600px;
+  height: var(--height);
+  background: var(--bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+.position-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: hsl(343, 69%, 64%);
+  border: 5px dashed hsl(333, 60%, 35%);
+  border-radius: var(--border-radius);
+  width: 200px;
+  height: 200px;
+}
+
+.position-v2 {
+  position: relative;
+  width: 600px;
+  height: var(--height);
+  background: var(--bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+.position-v2-text {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  background: hsl(343, 69%, 64%);
+  border: 5px dashed hsl(333, 60%, 35%);
+  border-radius: var(--border-radius);
+}
+
+.pm-container {
+  width: 600px;
+  padding: 200px 0;
+  background: var(--bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+.pm-text {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  background: hsl(343, 69%, 64%);
+}

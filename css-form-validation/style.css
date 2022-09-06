@@ -1,0 +1,30 @@
+:root {
+  --valid: lime;
+  --focus: yellow;
+  --invalid: orange;
+}
+form {
+  display: grid;
+  gap: 1.5rem;
+  width: min(20rem, 100%);
+}
+input {
+  border: 5px solid var(--color, #ccc);
+  border-radius: 10px;
+}
+.form-group {
+  display: grid;
+  gap: 0.5rem;
+  align-items: center;
+}
+.form-group:has(:valid) {
+  --color: var(--valid);
+}
+.form-group:has(:invalid) {
+  --color: var(--invalid);
+}
+.input-hint {
+  margin: 0;
+  font-size: 1rem;
+  color: hsl(0, 0%, 70%);
+}

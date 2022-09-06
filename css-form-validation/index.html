@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          for="email"
+          type="email"
+          title="must be a valid for email"
+          pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          for="password"
+          type="password"
+          pattern="[a-zA-Z0-9]{8,}"
+          title="Must be at least 8 characters"
+        />
+        <p class="input-hint">Must be at least 8 characters</p>
+      </div>
+      <button>submit</button>
+    </form>
+  </body>
+</html>
