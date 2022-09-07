@@ -1,0 +1,69 @@
+:root {
+  --color-blue: #34ace0;
+  --color-green: #33d9b2;
+  --color-green-1: #9aecdb;
+  --color-yellow: #ffda79;
+  --transition: 0.3s;
+  --border-width: 5px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+nav {
+  width: 100%;
+  border: var(--border-width) solid var(--color-blue);
+}
+ul {
+  list-style: none;
+}
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.nav-list li {
+  padding: 10px;
+
+  background: var(--color-green);
+}
+.nav-list li a {
+  color: #f7f1e3;
+  text-decoration: none;
+  transition: background var(--transition) ease;
+  background: var(--color-yellow);
+}
+.nav-list li a:hover {
+  scale: 1.1;
+  background: #706fd3;
+}
+.bg1 {
+  background: #2c2c54;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 10px;
+}
+@media (min-width: 600px) {
+  .nav-list {
+    flex-direction: row;
+  }
+  .cards {
+    flex-direction: row;
+  }
+}
+/* cards дотор байгаа бүх direct child - ууд */
+.cards > * {
+  //   flex-shrink: 1;
+  //   flex-grow: 1;
+  //   flex-basis: 0;
+  flex: 1; //shorthand
+}
+.cards .card {
+  background: var(--color-green-1);
+}
