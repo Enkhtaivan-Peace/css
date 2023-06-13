@@ -1,0 +1,26 @@
+a {
+  text-decoration: none;
+}
+.container {
+  display: flex;
+}
+.card {
+  margin: 10px;
+  padding: 10px;
+  background-color: bisque;
+  outline: 5px solid gold;
+}
+/*  */
+.card:has(p.premium) {
+  outline: 3px solid yellowgreen;
+  scale: 0.9;
+}
+.card a {
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: chocolate;
+}
+.card:not(:has(p.popular)) a {
+  color: black;
+  background-color: turquoise;
+}
