@@ -1,16 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 640px) {
+  body {
+    font-size: 0.7rem;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
 a {
   text-decoration: none;
 }
+
+/** зөвхөн class - тай ul element **/
+ul[class] {
+  list-style: none;
+}
+
+/** зөвхөн class - гүй ul element **/
+ul:not([class]) {
+  font-size: 1rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-style: italic;
+}
+
+/** nav element нь .main-nav гэсэн класстай бол **/
+nav:is(.main-nav) {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: gold;
+}
+
+.main-nav > .nav-list {
+  display: flex;
+  gap: 0.5rem;
+  background-color: silver;
+}
+
 .container {
+  max-width: 1280px;
+  margin-inline: auto;
+}
+.container-fluid {
+  max-width: 100%;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+.sticky:is(nav) {
+  padding: 0.5rem;
+  color: white;
+  background: chocolate;
+  z-index: 1;
+}
+.sticky-ul {
+  display: flex;
+  gap: 1.5rem;
+}
+.sticky-ul li {
+}
+
+.flex {
   display: flex;
 }
+
+.gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.gallery img {
+  aspect-ratio: 16/9;
+  transition: opacity 0.5s ease-in-out;
+}
+/**  5 - 8 элэмэнт хүртэл **/
+.gallery img:nth-child(n + 5):nth-child(-n + 8) {
+  grid-column: span 2;
+}
+/** хэрэв .gallery нь img:hover хийх үед hover биш img - үүд нь:  **/
+.gallery:has(img:hover) img:not(:hover) {
+  opacity: 0.5;
+}
+
+/** next sibling element **/
+.gallery img:hover + img {
+  outline: 4px solid lime;
+}
+/** previous sibling element  **/
+.gallery img:has(+ :hover) {
+  opacity: 0;
+  outline: 4px solid chocolate;
+}
+
 .card {
   margin: 10px;
   padding: 10px;
   background-color: bisque;
   outline: 5px solid gold;
 }
-/*  */
+
 .card:has(p.premium) {
   outline: 3px solid yellowgreen;
   scale: 0.9;
